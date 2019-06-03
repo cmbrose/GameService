@@ -1,0 +1,20 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-and-deploy",
+            "type": "shell",
+            "command": "./GameApplication/Scripts/build.ps1; Connect-ServiceFabricCluster -ConnectionEndpoint localhost:19000; ./GameApplication/Scripts/install.ps1",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ]
+}

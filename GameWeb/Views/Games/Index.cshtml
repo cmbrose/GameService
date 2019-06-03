@@ -1,0 +1,17 @@
+﻿@model string[]
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>You are "@ViewBag.Role"</h2>
+
+@Html.ReactRouter(
+    "TicTacToe.Game", 
+    new 
+    { 
+        initialData = Model,
+        rootCallbackUrl = Context.Request.Path.Value,
+        playable = ViewBag.Role == "X" || ViewBag.Role == "O"
+    }, 
+    renderFunctions: new EmotionFunctions()
+)

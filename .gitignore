@@ -1,0 +1,36 @@
+###################
+# compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.cache
+*.suo
+
+###############
+# Directories #
+###############
+bin/
+obj/
+objd/
+pkg/
+.vs/
+TestResults/
+
+########
+# Logs #
+########
+*.log
+
+#########
+# Nuget #
+#########
+packages
+
+########
+# Node #
+########
+node_modules

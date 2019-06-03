@@ -1,0 +1,34 @@
+﻿@model string[]
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (ViewBag.IsLoggedIn ?? false)
+{
+    <h1>Welcome @Context.Request.Cookies["userid"]</h1>
+}
+else
+{
+    <h2>You must sign in before being able to play a game</h2>
+    <p>But you can spectate in the meantime :)</p>
+
+    <form method="post">
+        <input type="text" name="id" />
+        <input type="hidden" name="mode" value="signin" />
+        <input type="submit" value="Sign In">
+    </form>
+}
+
+<h3>Active Games:</h3>
+
+@foreach (var game in Model)
+{
+    @Html.ReactRouter("GameLink", new { id = game }, renderFunctions: new EmotionFunctions())
+}
+
+<form method="post">
+    <input type="text" name="id" />
+    <input type="hidden" name="mode" value="creategame" />
+    <input type="submit" value="Start Game">
+</form>

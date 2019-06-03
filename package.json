@@ -1,0 +1,16 @@
+{
+  "name": "GameApplication",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "cd GameWeb && npx webpack --config webpack.config.js --progress && cd .."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}
